@@ -1,0 +1,38 @@
+package unc
+
+func foo() {
+	var err error
+	if 1 == 2 {
+	}
+
+	if err != nil {
+	} // want "lhs nil"
+
+	if 1 == 2 ||
+		err == nil ||
+		err == nil {
+	} // want "lhs nil"
+
+	if err == nil && // want "lhs nil"
+		bar() == nil {
+	} // want "lhs nil"
+
+	if 1 == 2 {
+	} else if err == nil {
+	} // want "lhs nil"
+
+	if 1 == 2 || (2 == 3 && err == nil) {
+	} // want "lhs nil"
+
+	if bar() != nil {
+	} // want "lhs nil"
+
+	if func() error {
+		return nil
+	}() != nil {
+	}
+}
+
+func bar() error {
+	return nil
+}
