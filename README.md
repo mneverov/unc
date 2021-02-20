@@ -2,7 +2,7 @@
 
 Linter `unc` reports c-style nil checks.
 
-Null checks with null on the left hand side (lhs) was popular in C to avoid the following bug:
+Null checks with null on the left hand side (lhs) were popular in C to avoid the following bug:
 
 ```
 if (some_var = NULL) ...
